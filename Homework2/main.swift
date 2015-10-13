@@ -8,29 +8,24 @@
 
 import Foundation
 
+//////////////////////
 /*Build a calculator*/
-//add
-let add = {
-    (firstVar: Int, secondVar: Int) -> Int in
-        return firstVar + secondVar
+//////////////////////
+
+func add (firstVar: Int, secondVar: Int) -> Int {
+    return firstVar + secondVar
 }
 
-//subtract
-let subtract = {
-    (firstVar: Int, secondVar: Int) -> Int in
-        return firstVar - secondVar
+func subtract (firstVar: Int, secondVar: Int) -> Int {
+    return firstVar - secondVar
 }
 
-//multiply
-let multiply = {
-    (firstVar: Int, secondVar: Int) -> Int in
-        return firstVar * secondVar
+func multiply (firstVar: Int, secondVar: Int) -> Int {
+    return firstVar * secondVar
 }
 
-//divide
-let divide = {
-    (firstVar: Int, secondVar: Int) -> Int in
-        return firstVar/secondVar
+func divide (firstVar: Int, secondVar: Int) -> Int {
+    return firstVar/secondVar
 }
 
 
@@ -43,10 +38,12 @@ print("Build a Calculator:")
 print("4 * 5 = \(mathOp(multiply, firstVar: 4, secondVar: 5))")
 print("3 + 10 = \(mathOp(add, firstVar: 3, secondVar: 10))")
 
-/*Array Fun*/
+/////////////
+//Array Fun//
+/////////////
 
 
-let addArray = { (nums: [Int]) -> Int in
+func addArray (nums: [Int]) -> Int {
     var total = 0
     for number in nums {
         total += number
@@ -54,21 +51,19 @@ let addArray = { (nums: [Int]) -> Int in
     return total
 }
 
-let mulArray = { (nums: [Int]) -> Int in
+func mulArray (nums: [Int]) -> Int {
     var total = 1
     for number in nums {
         total = total * number
     }
     return total
-    
 }
 
-
-let countArray = { (nums: [Int]) -> Int in
+func countArray (nums: [Int]) -> Int{
     return nums.count
 }
 
-let avgArray = { (nums: [Int]) -> Int in
+func avgArray (nums: [Int]) -> Int {
     var total = 0
     for number in nums {
         total += number
@@ -90,21 +85,149 @@ print("Multiplying [2,4,6,8,10]:  \(arrayOp(mulArray, nums: [2,4,6,8,10]))")
 print("Count [2,4,6,8,10]:  \(arrayOp(countArray, nums: [2,4,6,8,10]))")
 print("Average [2,4,6,8,10]:  \(arrayOp(avgArray, nums: [2,4,6,8,10]))")
 
+///////////
+//Points//
+//////////
 
-/*Points*/
-
-let addTup = { (firstTup : (Int, Int), secTup : (Int, Int)) -> (Int, Int) in
+func addTup (firstTup : (Int, Int), secTup : (Int, Int)) -> (Int, Int) {
     return ((firstTup.0 + secTup.0, firstTup.1 + secTup.1))
 }
 
-let subTup = { (firstTup : (Int, Int), secTup : (Int, Int)) -> (Int, Int) in
+func subTup (firstTup : (Int, Int), secTup : (Int, Int)) -> (Int, Int) {
     return ((firstTup.0 - secTup.0, firstTup.1 - secTup.1))
 }
 
+func addDictionary (var oneDictionary : [String : Int], var secDictionary : [String : Int]) -> (Int, Int) {
+    if oneDictionary["x"] == nil {
+        oneDictionary["x"] = 0
+    }
+    
+    if oneDictionary["y"] == nil {
+        oneDictionary["y"] = 0
+    }
+    
+    if secDictionary["x"] == nil {
+        secDictionary["x"] = 0
+    }
+    
+    if secDictionary["y"] == nil {
+        secDictionary["y"] = 0
+    }
+    
+    let xValues = oneDictionary["x"]! + secDictionary["x"]!
+    let yValues = oneDictionary["y"]! + secDictionary["y"]!
+    
+    return (xValues,yValues)
+    
+}
+
+func subDictionary (var oneDictionary : [String : Int], var secDictionary : [String : Int]) -> (Int, Int) {
+    if oneDictionary["x"] == nil {
+        oneDictionary["x"] = 0
+    }
+    
+    if oneDictionary["y"] == nil {
+        oneDictionary["y"] = 0
+    }
+    
+    if secDictionary["x"] == nil {
+        secDictionary["x"] = 0
+    }
+    
+    if secDictionary["y"] == nil {
+        secDictionary["y"] = 0
+    }
+    
+    let xValues = oneDictionary["x"]! - secDictionary["x"]!
+    let yValues = oneDictionary["y"]! - secDictionary["y"]!
+    
+    return (xValues,yValues)
+    
+}
+
+func addDictionary (var oneDictionary : [String : Double], var secDictionary : [String : Double]) -> (Double, Double) {
+    if oneDictionary["x"] == nil {
+        oneDictionary["x"] = 0
+    }
+    
+    if oneDictionary["y"] == nil {
+        oneDictionary["y"] = 0
+    }
+    
+    if secDictionary["x"] == nil {
+        secDictionary["x"] = 0
+    }
+    
+    if secDictionary["y"] == nil {
+        secDictionary["y"] = 0
+    }
+    
+    let xValues = oneDictionary["x"]! + secDictionary["x"]!
+    let yValues = oneDictionary["y"]! + secDictionary["y"]!
+    
+    return (xValues,yValues)
+    
+}
+
+func subDictionary (var oneDictionary : [String : Double], var secDictionary : [String : Double]) -> (Double, Double) {
+    if oneDictionary["x"] == nil {
+        oneDictionary["x"] = 0
+    }
+    
+    if oneDictionary["y"] == nil {
+        oneDictionary["y"] = 0
+    }
+    
+    if secDictionary["x"] == nil {
+        secDictionary["x"] = 0
+    }
+    
+    if secDictionary["y"] == nil {
+        secDictionary["y"] = 0
+    }
+    
+    let xValues = oneDictionary["x"]! - secDictionary["x"]!
+    let yValues = oneDictionary["y"]! - secDictionary["y"]!
+    
+    return (xValues,yValues)
+    
+}
+
+
+let values1 = [
+    "x" : 5,
+    "y" : 4
+]
+
+let values2 = [
+    "x" : 3,
+    "y" : 2
+]
+
+
+let values3 = [
+    "x" : 5.0,
+    "y" : 4.0
+]
+
+let values4 = [
+    "x" : 3.0,
+    "y" : 2.0
+]
+
 print("")
 print("Points:")
-print("Adding (1,4),(3,2) : \(addTup((1,4),(3,2)))")
-print("Subtracting (5,4),(3,2) : \(addTup((5,4),(3,2)))")
+print("Adding tuples (1,4),(3,2) : \(addTup((1,4),secTup: (3,2)))")
+print("Subtracting tuples (5,4),(3,2) : \(addTup((5,4),secTup: (3,2)))")
+print("Adding dictionary (5, 4) + (3, 2) \(addDictionary(values1, secDictionary: values2))")
+print("Subtracting dictionary (5, 4) - (3, 2): \(subDictionary(values1, secDictionary: values2))")
+print("Adding dictionary (5.0, 4.0) + (3.0, 2.0) \(addDictionary(values3, secDictionary: values4))")
+print("Subtracting dictionary (5.0, 4.0) - (3.0, 2.0): \(subDictionary(values3, secDictionary: values4))")
+print("")
+
+
+
+
 
 
 
