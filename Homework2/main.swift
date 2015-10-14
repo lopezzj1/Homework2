@@ -35,8 +35,10 @@ func mathOp(op : (Int, Int) -> Int, firstVar : Int, secondVar : Int) -> Int
 }
 
 print("Build a Calculator:")
-print("4 * 5 = \(mathOp(multiply, firstVar: 4, secondVar: 5))")
-print("3 + 10 = \(mathOp(add, firstVar: 3, secondVar: 10))")
+print("5 + 4 = \(mathOp(add, firstVar: 5, secondVar: 4))")
+print("5 - 4 = \(mathOp(subtract, firstVar: 5, secondVar: 4))")
+print("5 * 4 = \(mathOp(multiply, firstVar: 5, secondVar: 4))")
+print("6 / 3 = \(mathOp(divide, firstVar: 6, secondVar: 3))")
 
 /////////////
 //Array Fun//
@@ -80,10 +82,10 @@ func arrayOp(op : ([Int]) -> Int, nums: [Int]) -> Int
 
 print("")
 print("Array Fun:")
-print("Adding [2,4,6,8,10]:  \(arrayOp(addArray, nums: [2,4,6,8,10]))")
-print("Multiplying [2,4,6,8,10]:  \(arrayOp(mulArray, nums: [2,4,6,8,10]))")
-print("Count [2,4,6,8,10]:  \(arrayOp(countArray, nums: [2,4,6,8,10]))")
-print("Average [2,4,6,8,10]:  \(arrayOp(avgArray, nums: [2,4,6,8,10]))")
+print("Adding [2,4,6,8,10] =  \(arrayOp(addArray, nums: [2,4,6,8,10]))")
+print("Multiplying [2,4,6,8,10] = \(arrayOp(mulArray, nums: [2,4,6,8,10]))")
+print("Count [2,4,6,8,10] =  \(arrayOp(countArray, nums: [2,4,6,8,10]))")
+print("Average [2,4,6,8,10] =  \(arrayOp(avgArray, nums: [2,4,6,8,10]))")
 
 ///////////
 //Points//
@@ -217,12 +219,13 @@ let values4 = [
 
 print("")
 print("Points:")
-print("Adding tuples (1,4),(3,2) : \(addTup((1,4),secTup: (3,2)))")
-print("Subtracting tuples (5,4),(3,2) : \(addTup((5,4),secTup: (3,2)))")
-print("Adding dictionary (5, 4) + (3, 2) \(addDictionary(values1, secDictionary: values2))")
-print("Subtracting dictionary (5, 4) - (3, 2): \(subDictionary(values1, secDictionary: values2))")
-print("Adding dictionary (5.0, 4.0) + (3.0, 2.0) \(addDictionary(values3, secDictionary: values4))")
-print("Subtracting dictionary (5.0, 4.0) - (3.0, 2.0): \(subDictionary(values3, secDictionary: values4))")
+print("Adding tuples (1,4),(3,2) = \(addTup((1,4),secTup: (3,2)))")
+print("Subtracting tuples (5,4),(3,2) = \(addTup((5,4),secTup: (3,2)))")
+print("")
+print("Adding dictionary (5, 4) + (3, 2) = \(addDictionary(values1, secDictionary: values2))")
+print("Subtracting dictionary (5, 4) - (3, 2) =  \(subDictionary(values1, secDictionary: values2))")
+print("Adding dictionary (5.0, 4.0) + (3.0, 2.0) =  \(addDictionary(values3, secDictionary: values4))")
+print("Subtracting dictionary (5.0, 4.0) - (3.0, 2.0) =  \(subDictionary(values3, secDictionary: values4))")
 print("")
 
 
