@@ -9,27 +9,43 @@
 import Foundation
 
 //////////////////////
-/*Build a calculator*/
+//Build a calculator//
 //////////////////////
 
-func add (firstVar: Int, secondVar: Int) -> Int {
-    return firstVar + secondVar
+func nilError () -> String {
+    return "Nil error"
 }
 
-func subtract (firstVar: Int, secondVar: Int) -> Int {
-    return firstVar - secondVar
+func add (firstVar: Int?, secondVar: Int?) -> Int? {
+    if firstVar == nil || secondVar == nil {
+        nilError()
+    }
+    return firstVar! + secondVar!
 }
 
-func multiply (firstVar: Int, secondVar: Int) -> Int {
-    return firstVar * secondVar
+func subtract (firstVar: Int?, secondVar: Int?) -> Int? {
+    if firstVar == nil || secondVar == nil {
+        nilError()
+    }
+    return firstVar! - secondVar!
 }
 
-func divide (firstVar: Int, secondVar: Int) -> Int {
-    return firstVar/secondVar
+func multiply (firstVar: Int?, secondVar: Int?) -> Int? {
+    if firstVar == nil || secondVar == nil {
+        nilError()
+    }
+    return firstVar! * secondVar!
+}
+
+func divide (firstVar: Int?, secondVar: Int?) -> Int? {
+    if firstVar == nil || secondVar == nil {
+        nilError()
+    }
+    return firstVar!/secondVar!
 }
 
 
-func mathOp(op : (Int, Int) -> Int, firstVar : Int, secondVar : Int) -> Int
+func mathOp(op : (Int?, Int?) -> Int?, firstVar : Int?, secondVar : Int?) -> Int?
 {
     return op(firstVar, secondVar)
 }
@@ -45,36 +61,52 @@ print("6 / 3 = \(mathOp(divide, firstVar: 6, secondVar: 3))")
 /////////////
 
 
-func addArray (nums: [Int]) -> Int {
+func addArray (nums: [Int]?) -> Int? {
+    if nums == nil {
+        nilError()
+    }
+    
     var total = 0
-    for number in nums {
+    for number in nums! {
         total += number
     }
     return total
 }
 
-func mulArray (nums: [Int]) -> Int {
+func mulArray (nums: [Int]?) -> Int? {
+    if nums == nil {
+        nilError()
+    }
+    
     var total = 1
-    for number in nums {
+    for number in nums! {
         total = total * number
     }
     return total
 }
 
-func countArray (nums: [Int]) -> Int{
-    return nums.count
+func countArray (nums: [Int]?) -> Int?{
+    if nums == nil {
+        nilError()
+    }
+    
+    return nums!.count
 }
 
-func avgArray (nums: [Int]) -> Int {
+func avgArray (nums: [Int]?) -> Int? {
+    if nums == nil {
+        nilError()
+    }
+    
     var total = 0
-    for number in nums {
+    for number in nums! {
         total += number
     }
-    return total/nums.count
+    return total/nums!.count
 }
 
 
-func arrayOp(op : ([Int]) -> Int, nums: [Int]) -> Int
+func arrayOp(op : ([Int]?) -> Int?, nums: [Int]?) -> Int?
 {
     return op(nums)
 }
